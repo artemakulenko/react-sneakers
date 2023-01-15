@@ -1,5 +1,5 @@
 function Card(props){
-  console.log(props)
+  // console.log(props)
 
   return(
     <div className="sneakers__item sneaker">
