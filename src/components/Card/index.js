@@ -1,7 +1,10 @@
+import styles from './Card.modules.sass';
+console.log(styles)
+
 function Card(props){
   return(
-    <div className="sneakers__item sneaker" onClick={props.displayItem}>
-      <div className="sneakers__prodcontainer">
+    <div className={styles.sneakers__item} onClick={props.displayItem}>
+      <div className={styles.sneakers__prodcontainer}>
         <img src={props.imgUrl} alt="" className="sneakers__img" />
         <div className="sneakers__like">
           <img src="/img/like.svg" alt="" />
