@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap')
+@import './components/Card/card'
+@import './components/Header/header'
+
 
 *
   margin: 0
@@ -12,44 +15,7 @@ html
 body
   background: #E7F6FF
   font-family: 'Inter', sans-serif
-  background: #000
 
-
-
-.header
-  border-bottom: 1px solid #EAEAEA
-  display: flex
-  width: 100%
-  justify-content: space-between
-  padding: 43px 0
-  &__left
-    display: flex
-    gap: 16px
-    align-items: center
-  &__right
-    display: flex
-    gap: 30px
-    align-items: center
-  &__title
-    font-family: 'Inter'
-    font-style: normal
-    font-weight: 700
-    font-size: 20px
-    line-height: 24px
-    text-transform: uppercase
-    color: #000000
-  &__sub
-    font-family: 'Inter'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 17px
-    color: #9D9D9D
-  &__cart
-    display: flex
-    gap: 10px
-    width: 100%
-    align-items: center
 
 .icon
   cursor: pointer
@@ -74,49 +40,48 @@ body
   &__title
     margin-bottom: 30px
 
-.sneakers
+
+
+.banner
+  &__wrapper
+    background: #F4EFE9
+    border-radius: 20px
+    min-height: 300px
   &__grid
     display: grid
-    grid-template-columns: repeat(4, 1fr)
-    gap: 40px
-    grid-auto-rows: max-content
+    grid-template-columns: 1fr 2fr
   &__item
-    border: 1px solid #F3F3F3
-    border-radius: 40px
-    padding: 20px 30px 35px
-    position: relative
-  &__prodcontainer
-  &__img
-    max-width: 100%
-    width: 100%
-    object-fit: cover
-  &__like
-    position: absolute
-    top: 30px
-  &__title
-    font-family: 'Inter'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 17px
-    color: #000000
-    margin-bottom: 15px
-  &__pricecontainer
-  &__preprice
-    font-family: 'Inter'
-    font-style: normal
-    font-weight: 500
-    font-size: 11px
-    line-height: 13px
-    text-transform: uppercase
-    color: #BDBDBD
-  &__price
+    .banner-img
+      object-fit: cover
+      width: 100%
+  &__container
+    padding-left: 60px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    height: 100%
+    gap: 10px
+  &__btn
+    padding: 14px 54px
+    background: #A5D364
+    border-radius: 110px
+    border: none
     font-family: 'Inter'
     font-style: normal
     font-weight: 700
-    font-size: 14px
-    line-height: 17px
-    color: #000000
-  &__addtocart
-
-    
+    font-size: 16px
+    line-height: 19px
+    text-align: center
+    text-transform: uppercase
+    color: #FFFFFF
+    cursor: pointer
+  &__title
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 700
+    font-size: 38px
+    line-height: 46px
+    color: #8BB43C
+    span
+      color: black

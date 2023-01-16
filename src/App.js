@@ -1,5 +1,6 @@
-import Header from "./components/Header";
-import Card from "./components/Card"
+import Header from "./components/Header/Header";
+import Card from "./components/Card/Card";
+import Banner from "./components/Banner";
 
 const arr = [
   {
@@ -33,6 +34,7 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Banner/>
       <div className="content">
         <div className="container">
           <h1 className="content__title">Все кроссовки</h1>
@@ -46,6 +48,7 @@ function App() {
                   title={item.title}
                   price={item.price}
                   imgUrl={item.imgUrl}
+                  displayItem={() => console.log(item)}
                   />
                 })}
             </div>
