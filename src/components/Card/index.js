@@ -1,22 +1,33 @@
+import { useState } from 'react';
 import styles from './Card.module.sass';
 
 function Card(props){
+  
+  const [count, setCount] = useState(0)
+  console.log(count)
+  console.log(setCount)
   return(
-    <div className={styles.sneakers__item} onClick={props.displayItem}>
-      <div className={styles.sneakers__prodcontainer}>
-        <img src={props.imgUrl} className={styles.sneakers__img} />
-        <div className="sneakers__like">
-          <img src="/img/like.svg" alt="" />
+    <div className={styles.sneaker} onClick={props.displayItem}>
+      <div className={styles.productContainer}>
+        <img src={props.imgUrl} alt={props.title} className={styles.image} />
+        <div className={styles.like}>
+          <img src="/img/like.svg" alt="" onClick={props.addToFavorite} />
         </div>
       </div>
-      <div className="sneakers__title">
+      <div className={styles.title}>
         {props.title}
       </div>
-      <div className="sneakers__pricecontainer">
-        <div className="sneakers__preprice">Цена:</div>
-        <div className="sneakers__price">{props.price} руб.</div>
-        <div className="sneakers__addtocart">
-          <img src="/img/plus.svg" alt=""/>
+      <div>
+        <p> Вы кликнули {count} раз </p>
+        <button onClick={() => setCount(count + 1)}> click me </button>
+      </div>
+      <div className={styles.priceContainer}>
+        <div className={styles.preprice}>Цена:</div>
+        <div className={styles.price}>
+          {props.price} руб.
+        </div>
+        <div className={styles.addtocart}>
+          <img src="/img/plus.svg" alt="" onClick={props.addToBasket}/>
         </div>
       </div>
     </div> 

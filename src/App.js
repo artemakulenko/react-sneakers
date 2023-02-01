@@ -43,12 +43,14 @@ function App() {
         <section className="sneakers">
           <div className="container">
             <div className="sneakers__grid">
-              {arr.map(item => {
+              {arr.map((item, i) => {
                 return <Card 
                   title={item.title}
+                  key={i}
                   price={item.price}
                   imgUrl={item.imgUrl}
-                  displayItem={() => console.log(item)}
+                  addToBasket={() => console.log(item + ' added to basket')}
+                  addToFavorite={() => console.log(item)}
                   />
                 })}
             </div>
