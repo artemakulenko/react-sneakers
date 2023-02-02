@@ -1,3 +1,33 @@
+<!-- ## [Ссылка на сайт](https://artemakulenko.github.io/Test/) -->
+
+# 🧪 Проект в разработке 🧪
+
+## [Ссылка на макет](<https://www.figma.com/file/qzBGOei1Mun8N1xN2nENMD/React-Sneakers-(Copy)?node-id=0%3A1&t=71rM6M4LqnvFI8xM-1>)
+
+## Локальный запуск:
+
+- Клонировать репозиторий
+  ```bash
+  $ git clone git@github.com:artemakulenko/react-sneakers.git
+  ```
+- Перейти в директорию проекта и установить зависимости
+
+  ```bash
+  $ cd react-sneakers && npm install
+  ```
+
+- Запустить приложение в режиме разработки
+
+  ```bash
+  npm start
+  ```
+
+- Собрать приложение
+  ```bash
+  npm run build
+  ```
+
+<!--
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -67,4 +97,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
