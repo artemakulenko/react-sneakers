@@ -1,0 +1,92 @@
+$padding: 30px
+  
+.menu
+  position: fixed
+  min-height: 100vh
+  background: #FFFFFF 
+  top: 0
+  right: 0
+  width: 100%
+  max-width: 385px
+  z-index: 9
+  padding: $padding
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1)
+
+
+.title
+  font-family: 'Inter'
+  font-style: normal
+  font-weight: 700
+  font-size: 24px
+  line-height: 29px
+  color: #000000
+  margin-bottom: $padding
+
+.cart
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.cartItem
+  box-sizing: border-box
+  background: #FFFFFF
+  border: 1px solid #F3F3F3
+  border-radius: 20px
+  display: flex
+  gap: 20px
+  padding: 20px
+  align-items: center
+  justify-content: space-between
+  .imageWrapper
+    width: 70px
+    height: 70px
+    img
+      max-width: 100%
+      object-fit: contain
+      height: 100%
+
+
+.shoesTitle
+  font-family: 'Inter'
+  font-style: normal
+  font-weight: 400
+  font-size: 14px
+  line-height: 17px
+  color: #000000
+
+.price
+  font-family: 'Inter'
+  font-style: normal
+  font-weight: 700
+  font-size: 14px
+  line-height: 17px
+  color: #000000
+  margin-top: 8px
+
+
+
+.remove
+  cursor: pointer
+  display: flex
+  padding: 10px
+  background: #FFFFFF
+  border: 1px solid #F2F2F2
+  border-radius: 8px
+  transition: background-color 300ms ease
+  img
+    transform: rotate(45deg)
+
+.summury
+  position: absolute
+  bottom: $padding
+  width: 100%
+
+
+.btn
+  background: #9DD558
+  border-radius: 18px
+  color: #fff
+  padding: 18px 0
+  border: none
+  cursor: pointer
+  width: calc( 100% - $padding*2 )

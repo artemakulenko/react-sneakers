@@ -1,6 +1,9 @@
-import Header from "./components/Header/Header";
-import Card from "./components/Card";
-import Banner from "./components/Banner";
+import Header from "../Header/Header";
+import {Card} from "../Card";
+import {Banner} from "../Banner";
+import {Menu} from "../Menu";
+
+
 
 const arr = [
   {
@@ -35,7 +38,10 @@ function App() {
     <div className="app">
       <Header />
       <Banner/>
+      <Menu/>
+
       <div className="content">
+        
         <div className="container">
           <h1 className="content__title">Все кроссовки</h1>
         </div>
@@ -46,10 +52,10 @@ function App() {
               {arr.map((item, i) => {
                 return <Card 
                   title={item.title}
-                  key={i}
                   price={item.price}
                   imgUrl={item.imgUrl}
-                  addToBasket={() => console.log(item + ' added to basket')}
+                  key={i}
+                  addToBasket={() => console.log(item)}
                   addToFavorite={() => console.log(item)}
                   />
                 })}
@@ -62,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export {App};

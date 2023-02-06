@@ -25,8 +25,12 @@
     line-height: 17px
     color: #000000
     margin-bottom: 15px
-  .pricecontainer
-  .preprice
+  .priceContainer
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: center 
+  .priceTitle
     font-family: 'Inter'
     font-style: normal
     font-weight: 500
@@ -42,5 +46,11 @@
     line-height: 17px
     color: #000000
   .addtocart
-
-    
+    display: flex
+    padding: 10px
+    background: #FFFFFF
+    border: 1px solid #F2F2F2
+    border-radius: 8px
+    transition: background-color 300ms ease
+    &.checked
+      background: red
