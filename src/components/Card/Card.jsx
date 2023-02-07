@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import plusSvg from '../../images/plus.svg'
 import checkSvg from '../../images/check.svg'
+import likeSvg from '../../images/like.svg'
 
 
 import styles from './Card.module.sass';
@@ -16,8 +17,9 @@ function Card(props){
     <div className={styles.sneaker}>
       <div className={styles.productContainer}>
         <img src={props.imgUrl} alt={props.title} className={styles.image} />
-        <div className={styles.like}>
-          <img src="/img/like.svg" alt="" onClick={props.addToFavorite} />
+        <div 
+          className={`iconBtn`}>
+          <img src={ likeSvg } alt=""/>
         </div>
       </div>
       <div className={styles.title}>
@@ -30,7 +32,7 @@ function Card(props){
         </div>
         <div>
           <div 
-            className={`icon ${counter ? styles.checked : ''}`}>
+            className={`iconBtn ${counter ? styles.checked : ''}`}>
             <img src={ counter ? checkSvg : plusSvg} alt=""/>
           </div>
         </div>
