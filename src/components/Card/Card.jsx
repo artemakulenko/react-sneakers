@@ -24,15 +24,13 @@ function Card(props){
         {props.title}
       </div>
       <div className={styles.priceTitle}>Цена:</div>
-      <div className={styles.priceContainer}>
+      <div className={styles.priceContainer} onClick={checkFunc}>
         <div className={styles.price}>
           {props.price} руб.
         </div>
         <div>
           <div 
-            className={`plus ${counter ? 'checked' : ''}`}
-            onClick={checkFunc}
-            >
+            className={`icon ${counter ? styles.checked : ''}`}>
             <img src={ counter ? checkSvg : plusSvg} alt=""/>
           </div>
         </div>
