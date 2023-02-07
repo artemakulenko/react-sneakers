@@ -1,4 +1,4 @@
-function Header() {
+function Header(props) {
   return (
     <header className="header container">
       <div className="header__left">
@@ -11,7 +11,7 @@ function Header() {
         </div>
       </div>
       <div className="header__right">
-        <div className="header__cart">
+        <div className="header__cart" onClick={props.onShowMenu}>
           <img className="icon" src="/img/cart.svg" alt="" />
           <p className="header__price">1205 руб.</p>
         </div>
@@ -26,4 +26,4 @@ function Header() {
   );
 }
 
-export default Header;
+export {Header};

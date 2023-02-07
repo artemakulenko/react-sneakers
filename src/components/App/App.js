@@ -1,7 +1,8 @@
-import Header from "../Header/Header";
+import {Header} from "../Header";
 import {Card} from "../Card";
 import {Banner} from "../Banner";
 import {Menu} from "../Menu";
+import React, { useState } from "react";
 
 
 
@@ -34,14 +35,18 @@ const arr = [
 ]
 
 function App() {
+
+  const [isMenuOpen, setMenuStatus] = useState(false)
+
+  const changeMenuStatus = () => setMenuStatus(!isMenuOpen)
+
   return (
     <div className="app">
-      <Header />
+      <Header onShowMenu={changeMenuStatus}/>
       <Banner/>
-      <Menu/>
+      {isMenuOpen && <Menu onHideMenu={changeMenuStatus}/>}
 
       <div className="content">
-        
         <div className="container">
           <h1 className="content__title">Все кроссовки</h1>
         </div>

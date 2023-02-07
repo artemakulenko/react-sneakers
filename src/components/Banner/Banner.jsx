@@ -2,7 +2,6 @@ import styles from './Banner.module.sass'
 
 
 const Banner = () => {
-  console.log(styles)
   return(
     <div className={styles.banner}>
       <div className="container">
@@ -27,3 +26,6 @@ const Banner = () => {
 }
 
 export {Banner}
+
+
+
