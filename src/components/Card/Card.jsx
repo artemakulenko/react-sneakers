@@ -1,5 +1,11 @@
 import { useState } from 'react';
+import plusSvg from '../../images/plus.svg'
+import checkSvg from '../../images/check.svg'
+
+
 import styles from './Card.module.sass';
+
+
 
 function Card(props){
   const [counter, setCount] = useState(false)
@@ -7,7 +13,7 @@ function Card(props){
   const checkFunc = () => setCount(!counter)
 
   return(
-    <div className={styles.sneaker} onClick={props.displayItem}>
+    <div className={styles.sneaker}>
       <div className={styles.productContainer}>
         <img src={props.imgUrl} alt={props.title} className={styles.image} />
         <div className={styles.like}>
@@ -24,10 +30,10 @@ function Card(props){
         </div>
         <div>
           <div 
-            className={`${styles.addtocart} ${counter ? styles.checked : ''}`}
+            className={`plus ${counter ? 'checked' : ''}`}
             onClick={checkFunc}
             >
-            <img src="/img/plus.svg" alt="" onClick={props.addToBasket}/>
+            <img src={ counter ? checkSvg : plusSvg} alt=""/>
           </div>
         </div>
       </div>

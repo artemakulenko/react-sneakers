@@ -60,8 +60,7 @@ function App() {
                   price={item.price}
                   imgUrl={item.imgUrl}
                   key={i}
-                  addToBasket={() => console.log(item)}
-                  addToFavorite={() => console.log(item)}
+                  // addToFavorite={() => console.log(item)}
                   />
                 })}
             </div>
