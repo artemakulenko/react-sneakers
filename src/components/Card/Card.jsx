@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import plusSvg from '../../images/plus.svg'
 import checkSvg from '../../images/check.svg'
-import likeSvg from '../../images/like.svg'
+// import likeSvg from '../../images/like.svg'
+
+import {ReactComponent as LikeSvg} from '../../images/like.svg';
 
 
 import styles from './Card.module.sass';
@@ -18,8 +20,10 @@ function Card(props){
       <div className={styles.productContainer}>
         <img src={props.imgUrl} alt={props.title} className={styles.image} />
         <div 
-          className={`iconBtn`}>
-          <img src={ likeSvg } alt=""/>
+          className={`iconBtn ${styles.like}`}
+          onClick={() => console.log('hey')}
+          >
+          <LikeSvg/>
         </div>
       </div>
       <div className={styles.title}>
