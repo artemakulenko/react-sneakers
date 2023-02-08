@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import plusSvg from '../../images/plus.svg'
 import checkSvg from '../../images/check.svg'
-// import likeSvg from '../../images/like.svg'
-
 import {ReactComponent as LikeSvg} from '../../images/like.svg';
+import {ReactComponent as LikePressed} from '../../images/like-pressed.svg';
+
+
 
 
 import styles from './Card.module.sass';
@@ -12,8 +13,14 @@ import styles from './Card.module.sass';
 
 function Card(props){
   const [counter, setCount] = useState(false)
+  const [isLike, setLike] = useState(false)
+  const likedItems = []
 
-  const checkFunc = () => setCount(!counter)
+  const checkFunc = (e) => setCount(!counter)
+  function checkLike(){
+    console.log(this)
+    setLike(!isLike)
+  }
 
   return(
     <div className={styles.sneaker}>
@@ -21,9 +28,9 @@ function Card(props){
         <img src={props.imgUrl} alt={props.title} className={styles.image} />
         <div 
           className={`iconBtn ${styles.like}`}
-          onClick={() => console.log('hey')}
+          onClick={checkLike}
           >
-          <LikeSvg/>
+          { isLike ? <LikePressed/> : <LikeSvg/>}
         </div>
       </div>
       <div className={styles.title}>

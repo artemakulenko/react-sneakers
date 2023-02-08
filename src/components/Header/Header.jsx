@@ -13,7 +13,7 @@ function Header(props) {
       <div className="header__right">
         <div className="header__cart" onClick={props.onShowMenu}>
           <img className="icon" src="/img/cart.svg" alt="" />
-          <p className="header__price">1205 руб.</p>
+          <p className="header__price">0 руб.</p>
         </div>
         <div className="header__like">
           <img src="/img/like.svg" className="icon" alt="" />

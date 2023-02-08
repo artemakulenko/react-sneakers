@@ -2,49 +2,30 @@ import {Header} from "../Header";
 import {Card} from "../Card";
 import {Banner} from "../Banner";
 import {Menu} from "../Menu";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 
-const arr = [
-  {
-    title: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: 12999,
-    imgUrl: '/img/product1.jpg'
-  },
-  {
-    title: 'Мужские Кроссовки Nike Air Max 270',
-    price: 12999,
-    imgUrl: '/img/product2.jpg'
-  },
-  {
-    title: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: 1,
-    imgUrl: '/img/product3.png'
-  },
-  {
-    title: 'Кроссовки Puma X Aka Boku Future Rider',
-    price: 1,
-    imgUrl: '/img/product4.png'
-  },
-  {
-    title: 'Мужские Кроссовки Under Armour Curry 8',
-    price: 1,
-    imgUrl: '/img/product5.png'
-  },
-]
 
 function App() {
-
+  const [item, setItems] = useState([])
   const [isMenuOpen, setMenuStatus] = useState(false)
+  const [cartItems, setCartItems] = useState([])
 
   const changeMenuStatus = () => setMenuStatus(!isMenuOpen)
+
+  
+  useEffect(() => {
+    fetch('https://63e0786e65b57fe606435e40.mockapi.io/item').then(res => res.json()).then(json => {
+    setItems(json)
+    })
+  }, [])
 
   return (
     <div className="app">
       <Header onShowMenu={changeMenuStatus}/>
       <Banner/>
-      {isMenuOpen && <Menu onHideMenu={changeMenuStatus}/>}
+      {isMenuOpen && <Menu onHideMenu={changeMenuStatus} />}
 
       <div className="content">
         <div className="container">
@@ -54,7 +35,7 @@ function App() {
         <section className="sneakers">
           <div className="container">
             <div className="sneakers__grid">
-              {arr.map((item, i) => {
+              {item.map((item, i) => {
                 return <Card 
                   title={item.title}
                   price={item.price}
