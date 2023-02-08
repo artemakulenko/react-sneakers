@@ -1,26 +1,45 @@
+import checkSvg from '../../images/plus.svg'
+
 import styles from './Menu.module.sass';
 
-const Menu = props => { 
+const Menu = ({onHideMenu, items = []}) => { 
   return (
     <div className={styles.overlay}>
       <div className={styles.menu}>
-        <h2 className={styles.title}>Корзина</h2>
-        <div className={styles.cart}>
-          <div className={styles.cartItem}>
-            <div className={styles.imageWrapper}>
-              <img src="/img/product4.png" alt=""/>
-            </div>
-            <div className={styles.texts}>
-              <h3 className={styles.shoesTitle}>
-                Мужские Кроссовки Nike Air Max 270
-              </h3>
-              <p className={styles.price}>12 999 руб.</p>
-            </div>
-            <div className={styles.remove} onClick={props.onHideMenu}>
-              <img src="/img/plus.svg" alt="" />
-            </div>
+
+        <div className={styles.header}>
+          <h2 className={styles.title}>Корзина</h2>
+          <div className={`iconBtn ${styles.rotated}`} onClick={onHideMenu}>
+            <img src={ checkSvg } alt=""/>
           </div>
         </div>
+
+
+        {
+          items.map((item, i) => {
+            return(
+              <div className={styles.cart} key={i}>
+                <div className={styles.cartItem}>
+                  <div className={styles.imageWrapper}>
+                    <img src="/img/product4.png" alt=""/>
+                  </div>
+                  <div className={styles.texts}>
+                    <h3 className={styles.shoesTitle}>
+                      Мужские Кроссовки Nike Air Max 270
+                    </h3>
+                    <p className={styles.price}>12 999 руб.</p>
+                  </div>
+                  <div className={`iconBtn ${styles.rotated}`}>
+                    <img src="/img/plus.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
+
+
+        
 
 
         <div className={styles.summury}>

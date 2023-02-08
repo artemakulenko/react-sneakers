@@ -1,17 +1,26 @@
 $padding: 30px
   
 .overlay
+  position: fixed
   background: rgba(0, 0, 0, 0.1)
   mix-blend-mode: normal
   backdrop-filter: blur(5px)
-  position: fixed
   width: 100%
   height: 100%
   top: 0
   left: 0
   z-index: 1
 
+.header
+  display: flex
+  width: 100%
+  justify-content: space-between
+
+
 .menu
+  display: flex
+  flex-direction: column
+  gap: 20px
   position: fixed
   min-height: 100vh
   background: #FFFFFF 
@@ -76,14 +85,7 @@ $padding: 30px
 
 
 
-.remove
-  cursor: pointer
-  display: flex
-  padding: 10px
-  background: #FFFFFF
-  border: 1px solid #F2F2F2
-  border-radius: 8px
-  transition: background-color 300ms ease
+.rotated
   img
     transform: rotate(45deg)
 

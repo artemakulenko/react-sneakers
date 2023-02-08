@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <Header onShowMenu={changeMenuStatus}/>
       <Banner/>
-      {isMenuOpen && <Menu onHideMenu={changeMenuStatus} />}
+      {isMenuOpen && <Menu items={cartItems} onHideMenu={changeMenuStatus} />}
 
       <div className="content">
         <div className="container">
