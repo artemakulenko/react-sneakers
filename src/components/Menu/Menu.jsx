@@ -1,8 +1,22 @@
 import checkSvg from '../../images/plus.svg'
 
+import { useState } from 'react';
 import styles from './Menu.module.sass';
 
+
+
+
+
+
 const Menu = ({onHideMenu, items = []}) => { 
+  const [menuItems, setMenuItems ] = useState(items)
+
+
+  const removeItem = (item) => {
+    setMenuItems( menuItems.filter(El => El !== item)  )
+  }
+
+
   return (
     <div className={styles.overlay}>
       <div className={styles.menu}>
@@ -16,20 +30,23 @@ const Menu = ({onHideMenu, items = []}) => {
 
 
         {
-          items.map((item, i) => {
+          menuItems.map((item, i) => {
             return(
               <div className={styles.cart} key={i}>
                 <div className={styles.cartItem}>
                   <div className={styles.imageWrapper}>
-                    <img src="/img/product4.png" alt=""/>
+                    <img src={item.imgUrl} alt=""/>
                   </div>
                   <div className={styles.texts}>
                     <h3 className={styles.shoesTitle}>
-                      Мужские Кроссовки Nike Air Max 270
+                      {item.title}
                     </h3>
-                    <p className={styles.price}>12 999 руб.</p>
+                    <p className={styles.price}>{item.price} руб.</p>
                   </div>
-                  <div className={`iconBtn ${styles.rotated}`}>
+                  <div 
+                    className={`iconBtn ${styles.rotated}`} 
+                    onClick={() => removeItem(item)}
+                    >
                     <img src="/img/plus.svg" alt="" />
                   </div>
                 </div>

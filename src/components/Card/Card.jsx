@@ -11,21 +11,22 @@ import styles from './Card.module.sass';
 
 
 
-function Card(props){
+function Card({imgUrl, title, price, onPlus}){
   const [counter, setCount] = useState(false)
   const [isLike, setLike] = useState(false)
-  const likedItems = []
 
-  const checkFunc = (e) => setCount(!counter)
-  function checkLike(){
-    console.log(this)
-    setLike(!isLike)
+  const onClickPlus = () => {
+    onPlus()
+    setCount(!counter)
   }
 
+  const checkLike = () => setLike(!isLike)
+  
+  
   return(
     <div className={styles.sneaker}>
       <div className={styles.productContainer}>
-        <img src={props.imgUrl} alt={props.title} className={styles.image} />
+        <img src={imgUrl} alt={title} className={styles.image} />
         <div 
           className={`iconBtn ${styles.like}`}
           onClick={checkLike}
@@ -34,12 +35,12 @@ function Card(props){
         </div>
       </div>
       <div className={styles.title}>
-        {props.title}
+        {title}
       </div>
       <div className={styles.priceTitle}>Цена:</div>
-      <div className={styles.priceContainer} onClick={checkFunc}>
+      <div className={styles.priceContainer} onClick={onClickPlus}>
         <div className={styles.price}>
-          {props.price} руб.
+          {price} руб.
         </div>
         <div>
           <div 

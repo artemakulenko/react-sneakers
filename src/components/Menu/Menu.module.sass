@@ -10,6 +10,7 @@ $padding: 30px
   top: 0
   left: 0
   z-index: 1
+  overflow: auto
 
 .header
   display: flex
@@ -90,16 +91,22 @@ $padding: 30px
     transform: rotate(45deg)
 
 .summury
-  position: absolute
-  bottom: $padding
-  width: 100%
-
-
-.btn
-  background: #9DD558
-  border-radius: 18px
-  color: #fff
-  padding: 18px 0
-  border: none
-  cursor: pointer
-  width: calc( 100% - $padding*2 )
+  margin-top: auto
+  .summBlock
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    gap: 10px
+    .summBg
+      height: 1px
+      flex-grow: 1
+      border: 1px dashed #DFDFDF
+  .btn
+    background: #9dd558
+    margin-top: 25px
+    border-radius: 18px
+    color: #fff
+    padding: 18px 0
+    border: none
+    cursor: pointer
+    width: 100%

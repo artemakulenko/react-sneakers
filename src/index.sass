@@ -23,6 +23,7 @@ body
     grid-template-columns: repeat(4, 1fr)
     gap: 40px
     grid-auto-rows: max-content
+    margin-top: 30px
 
 .icon
   cursor: pointer
@@ -62,3 +63,25 @@ body
   justify-content: center
 
 
+// <div className="container content__wrapper">
+//   <h1 className="content__title">Все кроссовки</h1>
+//   <div className="content__input"><input className="input" type="text" placeholder="Поиск" /></div>
+// </div>
+
+.content__wrapper
+  display: flex
+  justify-content: space-between
+  .content__input
+    input
+      border: 1px solid #F3F3F3
+      border-radius: 10px
+      padding: 13px 40px
+      font-family: 'Inter'
+      font-style: normal
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      color: #C4C4C4
+      background: url(images/search.svg) no-repeat no-repeat left
+      background-position: 15px 15px
+      background-size: auto
